@@ -1,0 +1,153 @@
+body{
+    background:#262626;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height:100vh;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 310px;
+        height: 10%;
+        bottom: 0;
+        border-radius: 160%;
+        transform: rotate3d(1, 1, 1, 7deg) translateX(-62px);
+        filter: blur(2px);
+        background: radial-gradient(circle, #000000 0%, #1d1d1d 60%, #262626 100%);
+    }
+
+    .nota{
+        position: absolute;
+    width: 120px;
+    height: 90px;
+    background: #dbdb0e;
+    top: 0;
+    left: 0;
+    font-family: 'Circular-Loom';
+    padding: 1em;
+    font-size: 1em;
+    }    
+}
+.calculadora{
+    background:#f1f1f1;
+    width:250px;
+    height:500px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1, 1,25deg);
+
+    .calc__result{
+        width: 90%;
+        height: 130px;
+        background: #000000;
+        color: #fff;
+        margin: 1em auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        span{
+            font-size:3em;
+        }
+    }
+    .calc__butons{     
+        height: 64%;
+        width: 90%;
+        margin: auto;
+        background: gray;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 2fr 1fr 1fr;
+        grid-template-areas: "nums operations"
+                            "nums operations"
+                            "operations2 operations2";
+
+    }
+    .calc__butons--numbers{
+        grid-area:nums;
+        display: grid;
+        grid-template-columns:repeat(auto-fill,minmax(50px,1fr));
+
+        button{
+            color: #ffff;
+            background:#161616;
+            
+            &:hover{
+            background:#1c1b1b;
+                
+            }
+            &:last-child{
+                grid-column: 1 / -1;
+            }
+        }
+    }
+
+    .calc__butons--operations,
+    .calc__butons--operations2{
+        grid-area:operations;
+        display:grid;
+
+        button{
+            color:#ffff;
+            background:#323131;
+        }
+
+    }
+    .calc__butons--operations2{
+        grid-area:operations2;
+        grid-auto-flow: column;
+        button:last-child {
+            padding: 0 3em;
+        }
+        
+    }
+    
+
+    .back{
+        position:absolute;
+        top:0;
+        transform:translateZ(-30px);
+        height: 100%;
+        width: 100%;
+        background: #545454;
+    }
+
+    .bottom{
+        position: absolute;
+        bottom:0;
+        height: 6.2%;
+        width: 100%;
+        background:#545454;
+        transform: translatey(16px) translatez(-15px) rotateX(90deg);
+    }
+    .top{
+        
+        position: absolute;
+        top: 0;
+        transform: translatey(-16px) translatez(-15px) rotateX(90deg);
+        height: 6.2%;
+        width: 100%;
+        background: #545454;
+        
+    }
+    .left{
+        position: absolute;
+        height: 100%;
+        width: 13%;
+        background: #545454;
+        top: 0;
+        transform: rotateY(90deg)translatez(-16px) translateX(15px);
+    
+    }
+    .right{
+        position: absolute;
+        height: 100%;
+        width: 12%;
+        background:#545454;
+        top: 0;
+        transform: rotateY(90deg) translatez(235px) translateX(15px);
+    }
+
+}

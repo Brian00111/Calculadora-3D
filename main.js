@@ -1,5 +1,5 @@
 const calc = document.querySelector(".calculadora");
-let result = document.querySelector("#result span");
+let result = document.querySelector("#result p");
 const numbers = document.querySelector("#numbers");
 const operations = document.querySelector("#operations");
 
@@ -14,6 +14,9 @@ const readNumbers = (
   { key, code, textContent, nodeName, parentNode, id },
   tipoDeEvento
 ) => {
+  if (result.textContent.length > 10) result.style.fontSize = "1.8em";
+  if (result.textContent.length > 15) result.style.fontSize = "1.1em";
+
   if (tipoDeEvento === "keydown") {
     let rangoDeNumeros = /Numpad[0-9]/g;
     let operations = /Numpad((Divide)|(Multiply)|(Subtract)|(Add))/g;
@@ -49,7 +52,6 @@ const readNumbers = (
 
 const writeNumbers = (numeros) => {
   if (cuenta1.length >= 8 || cuenta2.length >= 8) {
-    result.textContent = "ERR";
     return;
   }
 

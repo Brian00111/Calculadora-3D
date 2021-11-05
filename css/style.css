@@ -8,7 +8,7 @@ body .nota { position: absolute; width: 120px; height: 90px; background: #dbdb0e
 
 .calculadora .calc__result { width: 90%; height: 130px; background: #000000; color: #fff; margin: 1em auto; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-.calculadora .calc__result span { font-size: 3em; }
+.calculadora .calc__result p { font-size: 2.5em; }
 
 .calculadora .calc__butons { height: 64%; width: 90%; margin: auto; background: gray; display: -ms-grid; display: grid; -ms-grid-columns: 2fr 1fr; grid-template-columns: 2fr 1fr; -ms-grid-rows: 2fr 1fr 1fr; grid-template-rows: 2fr 1fr 1fr; grid-template-areas: "nums operations" "nums operations" "operations2 operations2"; }
 
